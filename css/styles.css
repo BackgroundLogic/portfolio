@@ -1,17 +1,26 @@
-    /* color pallet - https://colorhunt.co/palette/1c67583d8361d6cda4eef2e6  */
-    body {
-        background-color: #EEF2E6;
-        color: #3D8361;
-    }
-    hr {
-        border-style: dotted none none;
-        border-width: 10px;
-        border-color: #D6CDA4;
-        width: 15%;
-    }
-    h1 {
-        color: #1C6758;
-    }
-    h3 {
-        color: #1C6758;
-    }
+/* color pallet - https://colorhunt.co/palette/1c67583d8361d6cda4eef2e6  */
+body {
+    background-color: #EEF2E6;
+    margin: 0;
+}
+hr {
+    border-style: dotted none none;
+    border-width: 10px;
+    border-color: #D6CDA4;
+    width: 15%;
+}
+h1 h3 {
+    color: #D6CDA4;
+}
+.profile-picture {
+    border-radius: 100%;
+    height: 200px;
+}
+.profile-header {
+    background-color: #1C6758;
+    padding: 30px;
+    color: #D6CDA4;
+}
+.links {
+    background-color: #1C6758;
+}
