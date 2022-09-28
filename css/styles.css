@@ -1,26 +1,62 @@
 /* color pallet - https://colorhunt.co/palette/1c67583d8361d6cda4eef2e6  */
+
+/* Whole Page Styles */
 body {
     background-color: #EEF2E6;
     margin: 0;
+    text-align: center;
 }
 hr {
     border-style: dotted none none;
     border-width: 10px;
     border-color: #D6CDA4;
     width: 15%;
+    margin: 150px auto 150px auto
 }
-h1 h3 {
+h3 {
+    color: #1C6758;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* Header Styles */
+.profile-header {
+    background-color: #3D8361;
+    padding: 30px 30px 16px;
     color: #D6CDA4;
+    position: relative;
 }
 .profile-picture {
     border-radius: 100%;
     height: 200px;
 }
-.profile-header {
-    background-color: #1C6758;
-    padding: 30px;
-    color: #D6CDA4;
+.profile-name {
+    font-family: 'Lobster', cursive;
 }
-.links {
-    background-color: #1C6758;
+
+/* Profile Body Styles */
+.profile-middle {
+    padding: 16px 0px 0px 0px;
+}
+.edu-icon {
+    height: 200px;
+}
+.work-history-icon {
+    height: 200px;
+}
+.work-table {
+    margin: 0 auto 0 auto;
+}
+.skill-icon {
+    height: 200px;
+}
+.skill-table {
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+/* Profile Footer Styles */
+.profile-footer {
+    background-color: #3D8361;
+    color: #D6CDA4;
+    padding: 16px 0px 16px 0px
 }
