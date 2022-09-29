@@ -62,7 +62,7 @@ h3 {
 @media (pointer:coarse) {
     .body-section {
         width: 90%;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 .edu-icon {
@@ -82,6 +82,11 @@ h3 {
     margin: 0 auto 0 auto;
     clear: right;
     width: 100%
+}
+@media (pointer:coarse) {
+    .work-table {
+        font-size: 1.2rem;
+    }
 }
 .skill-icon {
     width: 25%;
