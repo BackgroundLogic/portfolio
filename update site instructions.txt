@@ -6,3 +6,8 @@
 
 notes, if not in the project directory when pulling will get error
 "Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
+
+if the console complains about overwriting local files do the following to force overwriting the files
+git fetch
+git reset --hard HEAD
+git merge '@{u}'
