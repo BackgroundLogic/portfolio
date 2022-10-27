@@ -1,30 +1,4 @@
-/* fonts in use https://fonts.google.com/share?selection.family=Lobster%7CMontserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900%7CSatisfy%7CUbuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700 */
-
-/* Whole Page */
-body{
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
-
-}
-.container-fluid{
-    text-align: center;
-    padding: 3% 8%;
-}
-
-/* Navigation Bar */
-#top {
-    background-color: #3D8361;
-    color: #fff;
-}
-.navbar{
-
-}
-
 /* Main */
-#main{
-    background-color: #EEF2E6;
-    color: #1C6758;
-}
 .img-fluid{
     width: 60%
 }
@@ -43,11 +17,3 @@ body{
     font-weight: 300;
 }
 
-/* Footer */
-#footer{
-    background-color: #3C7157;
-    color: #fff;
-}
-.footer{
-    padding-bottom: 3rem;
-}
