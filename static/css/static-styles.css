@@ -1,8 +1,13 @@
+/* fonts in use https://fonts.google.com/share?selection.family=Lobster%7CMontserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900%7CSatisfy%7CUbuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700 */
+
 /* Whole Page */
 body{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
 
 }
 .container-fluid{
+    text-align: center;
     padding: 3% 8%;
 }
 
@@ -18,13 +23,28 @@ body{
 /* Main */
 #main{
     background-color: #EEF2E6;
-    text-align: center;
+}
+.img-fluid{
+    width: 60%
+}
+.greeting{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding-top: 2rem;
+}
+.my-name{
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.blurb{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
 }
 
 /* Footer */
 #footer{
     background-color: #3C7157;
-    text-align: center;
 }
 .footer{
     padding-bottom: 3rem;
