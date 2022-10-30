@@ -9,18 +9,25 @@ body{
 }
 .container-fluid{
     text-align: center;
-    padding: 3% 8%;
+    padding: 1% 8%;
 }
+
 
 /* Navigation Bar */
 #top {
     background-color: #3D8361;
     color: #fff;
 }
-.navbar{
-
+.navbar-container{
 }
-
+.navbar{
+    padding-bottom: 0;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #EEF2E6;
+    color: #1C6758;
+}
 /* Main */
 #main{
     background-color: #EEF2E6;

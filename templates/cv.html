@@ -19,7 +19,7 @@
 <body>
     <!-- Page Top -->
     <section id="top">
-        <div class="container-fluid">
+        <div class="container-fluid navbar-container">
         <!-- Nav Bar -->
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="/">Jan Olson</a>
@@ -27,9 +27,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link" href="/cv">Curriculum Vitae</a>
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/cv">Curriculum Vitae</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href=""></a>
@@ -41,15 +44,126 @@
     </section>
     <!-- Page Content -->
     <section id="main">
-        <div class="container-fluid education-sec">
-            <div class="row">
-                <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="container-fluid ">
+            <div class="row education-sec rounded">
+                <div class="section-inner col-lg-5 col-md-6 col-sm-12">
                     <img class="img-fluid section-icon" src="https://cdn-icons-png.flaticon.com/512/201/201614.png" alt="education-img">
                 </div>
-                <div class="edu-details col-lg-7 col-md-6 col-sm-12 text-lg-start text-md-start text-sm-center">
-                    <h3>Education</h3>
-                    <p><a href="https://appbrewery.com/">App Brewery</a> - 100 days of Code: The Complete Python Pro Bootcamp</p>
-                    <p>Bachelors in Electrical Engineering</p>
+                <div class="edu-details section-inner col-lg-7 col-md-6 col-sm-12 text-lg-start text-md-start text-sm-center text-center">
+
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"><h3>Education</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://appbrewery.com/">App Brewery</a> - 100 days of Code: The Complete Python Pro Bootcamp</td>
+                            </tr>
+                            <tr>
+                                <td>Bachelors in Electrical Engineering</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ">
+            <div class="row work-history rounded">
+                <div class="section-inner col-lg-5 col-md-6 col-sm-12">
+                    <img class="img-fluid section-icon" src="https://cdn-icons-png.flaticon.com/512/201/201655.png" alt="work-history-img">
+                </div>
+                <div class="work-details section-inner col-lg-7 col-md-6 col-sm-12 text-start">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Year(s)</th>
+                                <th scope="col">Job Title</th>
+                                <th scope="col">Company</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-nowrap">2019 - 2022</td>
+                                <td>Site Support Technician II</td>
+                                <td>@Aegon / Transamerica</td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap">2016 - 2019</td>
+                                <td>Computer Repair Technician</td>
+                                <td>@Micro Center</td>
+                            </tr>
+                            <tr>
+                                <td class="text-nowrap">2014 - 2016</td>
+                                <td>Training Computer Repair Technician</td>
+                                <td>@Technology Integration Group</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ">
+            <div class="row skills-sec rounded">
+                <div class="section-inner col-lg-5 col-md-6 col-sm-12">
+                    <img class="img-fluid section-icon" src="https://cdn-icons-png.flaticon.com/512/344/344448.png" alt="skills-img">
+                </div>
+                <div class="skill-details section-inner col-lg-7 col-md-6 col-sm-12 ">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-start">Skill</th>
+                                <th scope="col">Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-start">Computer Hardware Diagnostics</td>
+                                <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Software Diagnostics</td>
+                                <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Computer Repair</td>
+                                <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">IT Customer Communication</td>
+                                <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Javascript</td>
+                                <td>&#9733;&#9733;&#9734;&#9734;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Python</td>
+                                <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Godot</td>
+                                <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">HTML</td>
+                                <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">C++</td>
+                                <td>&#9733;&#9733;&#9734;&#9734;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">C#</td>
+                                <td>&#9733;&#9733;&#9734;&#9734;&#9734;</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">Service-Now</td>
+                                <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
