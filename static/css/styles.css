@@ -28,6 +28,7 @@ body{
   background-color: #EEF2E6;
     color: #1C6758;
 }
+
 /* Main */
 #main{
     background-color: #EEF2E6;
@@ -41,4 +42,8 @@ body{
 }
 .footer{
     padding-bottom: 3rem;
+}
+.fa-social-icon{
+    font-size: 2rem;
+    color: #fff;
 }

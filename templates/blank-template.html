@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/07ab1e8eb7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Page Top -->
@@ -37,11 +38,55 @@
                         <li class="nav-item">
                             <a class="nav-link" href=""></a>
                         </li>
+                        <li class="nav-item mx-auto">
+                            <button class="btn nav-link" type="button" data-bs-toggle="modal" data-bs-target="#contactMeForm">Contact Me (WIP)</button>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </section>
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactMeForm" tabindex="-1" aria-labelledby="contactMeFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-4" id="contactMeFormLabel">Contact Me (WIP)</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Name input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="contact-name" class="form-control" />
+                            <label class="form-label" for="contact-name">Name</label>
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="contact-email" class="form-control" />
+                            <label class="form-label" for="contact-email">Email address</label>
+                        </div>
+                        <!-- textarea input -->
+                        <div class="form-outline mb-4">
+                            <textarea id="email-message" rows="4" class="form-control"></textarea>
+                            <label class="form-label" for="email-message">Your message</label>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="form-check d-flex justify-content-center mb-4">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="checkbox4" checked />
+                            <label class="form-check-label" for="checkbox4">
+                                Send me a copy of this message
+                            </label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Page Content -->
     <section id="main">
         <div class="container-fluid">
@@ -52,10 +97,36 @@
     <footer id="footer">
         <div class="container-fluid">
             <div class="footer">
+                <div class="container pt-4">
+                    <section class="mb-4">
+                        <a
+                            class="btn btn-link btn-floating btn-lg"
+                            href="https://backgroundlogic.github.io/"
+                            >
+                            <i class="fa-sharp fa-solid fa-j fa-social-icon"></i>
+                        </a>
+                        <a
+                            class="btn btn-link btn-floating btn-lg"
+                            href="https://www.instagram.com/backgroundlogic/"
+                            >
+                            <i class="fa-brands fa-instagram fa-social-icon"></i>
+                        </a>
+
+                        <a
+                            class="btn btn-link btn-floating btn-lg"
+                            href="https://twitter.com/backgroundlogic"
+                            >
+                            <i class="fa-brands fa-twitter fa-social-icon"></i>
+                        </a>
+                        <a
+                            class="btn btn-link btn-floating btn-lg"
+                            href="https://github.com/BackgroundLogic"
+                            >
+                            <i class="fa-brands fa-github fa-social-icon"></i>
+                        </a>
+                    </section>
+                </div>
                 <div class="row">
-                    <div class="col-12">
-                        <a href="https://backgroundlogic.github.io/">Contact Me</a>
-                    </div>
                     <div class="col">
                         &copy; <script>document.write(new Date().getFullYear());</script>, Jan Olson.
                     </div>
