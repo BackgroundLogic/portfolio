@@ -8,7 +8,7 @@ class Mailer:
         self.FROM_EMAIL = os.environ.get("FROM_EMAIL")
         self.EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
-    def send_mail(self, subject, message, contact_email):
+    def send_mail(self, name, contact_email, message):
         with smtplib.SMTP("smtp.gmail.com", 587) as connection:
             connection.starttls()
             connection.login(
@@ -19,5 +19,5 @@ class Mailer:
             connection.sendmail(
                 from_addr=self.FROM_EMAIL,
                 to_addrs=to_emails,
-                msg=f"Subject:{subject}\n\n{message}"
+                msg=f"Subject:New Message From {name}\n\n{message}"
             )
