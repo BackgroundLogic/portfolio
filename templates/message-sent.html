@@ -12,7 +12,14 @@
         <div class="container-fluid">
             <h1>Message sent!</h1>
             <h2>(but not really this is still a work in progress)</h2>
+            <h3>This page will redirect after 5 seconds.</h3>
         </div>
     </section>
+    <script>
+     window.setTimeout(function(){
+       window.location.href = "{{ url_for('home') }}";
+       }, 5000);
+
+ </script>
 
     {% include "footer.html" %}
