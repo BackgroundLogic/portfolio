@@ -1,12 +1,11 @@
-    {% include "header.html" %}
-
+{% extends "blank-template.html" %}
+    {% block title %}Message Confirmation{% endblock %}
+    {% block page_styles %}
     <!-- Page Style -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/message-sent-styles.css') }}">
-</head>
-<body>
-    {% include "navigation.html" %}
-    {% include "contact.html" %}
+    {% endblock %}
 
+    {% block content %}
     <!-- Page Content -->
     <section id="main">
         <div class="container-fluid">
@@ -15,11 +14,12 @@
             <h3>This page will redirect after 5 seconds.</h3>
         </div>
     </section>
+    {% endblock %}
+    {% block scripts %}
+    <!-- scripts -->
     <script>
      window.setTimeout(function(){
        window.location.href = "{{ url_for('home') }}";
        }, 5000);
-
- </script>
-
-    {% include "footer.html" %}
+    </script>
+    {% endblock %}
