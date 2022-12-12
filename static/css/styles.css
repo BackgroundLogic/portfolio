@@ -28,7 +28,9 @@ body{
   background-color: #EEF2E6;
     color: #1C6758;
 }
-
+#contactMeForm {
+    color: #000;
+}
 /* Main */
 #main{
     background-color: #EEF2E6;

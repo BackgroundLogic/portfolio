@@ -1,0 +1,36 @@
+    {% from "bootstrap5/form.html" import render_form %}
+    {% extends "blank-template.html" %}
+    {% block title %}Contact Me{% endblock %}
+    {% block page_styles %}
+    <!-- Page Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contact-me-styles.css') }}">
+    {% endblock %}
+
+    {% block content %}
+    <!-- Page Content -->
+    <section id="main">
+        <div class="container-fluid">
+            {% if request.method == 'GET' %}
+                {{ ckeditor.load() }}
+                {{ ckeditor.config(name='message') }}
+                {{ render_form(form, novalidate=True, button_map={"submit": "primary"})  }}
+            {% else: %}
+                <h1>Message sent!</h1>
+                <h2>(but not really this is still a work in progress)</h2>
+                <h3>This page will redirect after 5 seconds.</h3>
+            {% endif %}
+        </div>
+    </section>
+    {% endblock %}
+    {% block scripts %}
+        {{ bootstrap.load_js() }}
+    <!-- scripts -->
+    {% if request.method == 'POST' %}
+        <script>
+             window.setTimeout(function(){
+                window.location.href = "{{ url_for('home') }}";
+             }, 5000);
+        </script>
+    {% endif %}
+
+    {% endblock %}
