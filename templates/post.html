@@ -1,0 +1,65 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "blank-template.html" %}
+    {% block title %}{{ post.title }}{% endblock %}
+    {% block page_styles %}
+    <!-- Page Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/post-styles.css') }}">
+    {% endblock %}
+
+    {% block content %}
+    <!-- Page Content -->
+    <section id="main">
+        <header class="masthead" style="background-image: url('{{ post.img_url }}')">
+            <div class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="post-heading">
+                            <h1>{{ post.title }}</h1>
+                            <h2 class="subheading">{{ post.subtitle }}</h2>
+                            <span class="meta">
+                                by {{ post.author.name }}
+                                on {{ post.date }}
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+          <div class="container-fluid">
+                <div class="row post-body">
+                      <div class="col-lg-10 col-md-12 mx-auto">
+                            {{ post.body|safe }}
+                            <hr>
+                <!--        comments code goes here      -->
+                            <div class="col-lg-8 col-md-10 mx-auto comment">
+                            {{ ckeditor.load() }}
+                            {{ ckeditor.config(name='comment_body') }}
+                            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                                <hr>
+                                <ul class="comment-list">
+                                    {% for comment in post.comments %}
+                                        <li>
+                                            <div class="commenter-image">
+                                                <img src={{ comment.comment_author.email | gravatar }}>
+                                            </div>
+                                            <div class="comment-text">
+                                                {{ comment.text|safe }}
+                                                <span class="date sub-text">{{ comment.comment_author.username }}</span>
+                                            </div>
+                                        </li>
+                                    <hr>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                      </div>
+                </div>
+          </div>
+    </section>
+    {% endblock %}
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    <!-- scripts -->
+
+    {% endblock %}

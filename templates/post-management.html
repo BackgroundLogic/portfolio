@@ -1,0 +1,59 @@
+{% extends "blank-template.html" %}
+    {% block title %}Post Management{% endblock %}
+    {% block page_styles %}
+    <!-- Page Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/post-management-styles.css') }}">
+    {% endblock %}
+
+    {% block content %}
+    <!-- Page Content -->
+    <section id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Blog Posts</h1>
+                <h2>Create, Edit and Delete Posts</h2>
+                <div class="create-post-btn">
+                    <a class="btn btn-primary btn-lg float-right" href="{{ url_for('create_post') }}">Create Post</a>
+                </div>
+                <hr>
+            </div>
+            <div class="row post-list">
+                {% for post in all_posts %}
+                <div class="col-lg-3 col-md-6 mx-auto ">
+                    <div class="img-btn">
+                        <a type="button"
+                           class="btn btn-img btn-dark post-preview"
+                           href="{{ url_for('view_post', post_id=post.id) }}"
+                           style="background-image: url('{{ post.img_url }}'); ">
+                            <span>
+                                <h2 class="button-text">
+                                    {{ post.title }}
+                                </h2>
+                                <h3 class="button-text">
+                                    {{ post.subtitle }}
+                                </h3>
+                                <p class="button-text">
+                                    Posted on {{ post.date }}
+                                </p>
+                            </span>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="post-controls">
+                            <a class="btn btn-warning float-right" href="{{ url_for('edit_post', post_id=post.id) }}">Edit Post</a>
+                            <a class="btn btn-danger float-right" href="#">Delete Post</a>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </section>
+    {% endblock %}
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    <!-- scripts -->
+
+    {% endblock %}

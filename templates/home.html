@@ -11,22 +11,50 @@
         <div class="container-fluid">
             <h1>(This site is still a work in progress)</h1>
             <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                    <img class="img-fluid rounded-circle profile-pic" src="{{ url_for('static', filename='images/profile_picture_square.jpg') }}">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="row">
+                        <div class="">
+                            <img class="img-fluid rounded-circle profile-pic" src="{{ url_for('static', filename='images/profile_picture_square.jpg') }}">
+                        </div>
+                        <div class="intro-text">
+                            <span>
+                                <h1>Hello I'm Jan Olson,</h1>
+                                <p>
+                                    welcome to my website. Here I post the various projects I'm working on both
+                                    personal and professional. You'll find my current CV and skillset listed as well as examples of
+                                    my work. Take a look around and message me if the urge strikes you.
+                                </p>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-8 col-sm-12 d-flex align-items-center justify-content-center">
-                    <p>Hello I'm Jan Olson, welcome to my website. Here I post the various projects I'm working on both
-                        personal and professional. You'll find my current CV and skillset listed as well as examples of
-                        my work. Take a look around and message me if the urge strikes you.
-                    </p>
-                </div>
-                <div class="col-lg-3"></div>
             </div>
-            <div class="row">
-                <div class="col" style="background-color: yellow">
-                    more stuff goes here
-                </div>
+            <hr>
+            <div class="row post-list">
+                <h2 class="blog-header">Blog Posts</h2>
+
+                {% for post in all_posts %}
+                <dvi class="col-lg-3 col-md-6 mx-auto ">
+                    <div class="img-btn">
+                        <a type="button"
+                           class="btn btn-img btn-dark post-preview"
+                           href="{{ url_for('view_post', post_id=post.id) }}"
+                           style="background-image: url('{{ post.img_url }}'); ">
+                            <span>
+                                <h2 class="button-text">
+                                    {{ post.title }}
+                                </h2>
+                                <h3 class="button-text">
+                                    {{ post.subtitle }}
+                                </h3>
+                                <p class="button-text">
+                                    Posted on {{ post.date }}
+                                </p>
+                            </span>
+                        </a>
+                    </div>
+                </dvi>
+                {% endfor %}
             </div>
         </div>
     </section>

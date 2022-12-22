@@ -1,0 +1,51 @@
+header.masthead {
+    background: no-repeat center center;
+    position: relative;
+    background-attachment: scroll;
+    background-size: cover;
+    z-index: 0;
+}
+
+header.masthead .overlay {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: #212529;
+opacity: 0.5;
+z-index: -1;
+}
+
+header.masthead .post-heading {
+    padding: 100px 0 100px;
+    color: white;
+}
+
+.post-body {
+    padding: 3% 5%;
+    text-align: justify;
+}
+
+.comment-list {
+    padding:0;
+    list-style:none;
+
+}
+.comment-list li {
+    margin:0;
+    margin-top:10px;
+}
+.comment-list li > div {
+    display:table-cell;
+}
+.commenter-image {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenter-image img {
+    width:100%;
+    border-radius:50%;
+}

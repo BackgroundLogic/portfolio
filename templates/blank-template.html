@@ -32,7 +32,7 @@
 
     <!-- Page Top -->
     <section id="top">
-        <div class="container-fluid">
+        <div class="container-fluid navbar-container">
         <!-- Nav Bar -->
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="/">Jan Olson</a>
@@ -44,6 +44,15 @@
                         {{ render_nav_item('home', 'Home', use_li=True) }}
                         {{ render_nav_item('cv', 'Curriculum Vitae', use_li=True) }}
                         {{ render_nav_item('contact_me', 'Contact Me', use_li=True) }}
+                        {% if not logged_in: %}
+                            {{ render_nav_item('login', 'Login', use_li=True) }}
+                            {{ render_nav_item('register', 'Register', use_li=True) }}
+                        {% else: %}
+                            {{ render_nav_item('logout', 'Logout', use_li=True) }}
+                            {% if current_user.id == 1 %}
+                                {{ render_nav_item('post_management', 'Manage Posts', use_li=True) }}
+                            {% endif %}
+                        {% endif %}
                     </ul>
                 </div>
             </nav>

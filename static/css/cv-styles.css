@@ -1,6 +1,7 @@
 /* Whole Page */
 .section-icon{
     width: 15rem;
+    padding: 1%;
 }
 .section-inner{
     padding: 1%;
@@ -10,6 +11,9 @@
 }
 .table-striped{
     --bs-table-striped-color: #1C6758;
+}
+.section-container {
+    padding: 3% 8%;
 }
 /* Education */
 .education-sec{

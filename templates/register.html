@@ -1,0 +1,35 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "blank-template.html" %}
+    {% block title %}Register{% endblock %}
+    {% block page_styles %}
+    <!-- Page Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register-styles.css') }}">
+    {% endblock %}
+
+    {% block content %}
+    <!-- Page Content -->
+    <section id="main">
+        <div class="container-fluid form-page">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 col-sm-1"></div>
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <h1>Register at your own risk site database subject to reset as needed.</h1>
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        {% for message in messages %}
+                         <p class="flash-msg">{{ message }}</p>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+                    {{ render_form(form, novalidate=True, button_map={"submit": "primary"})  }}
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-1"></div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    <!-- scripts -->
+
+    {% endblock %}

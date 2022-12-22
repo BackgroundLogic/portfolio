@@ -1,0 +1,39 @@
+
+.create-post-btn {
+    margin-bottom: 16px;
+}
+
+.post-container {
+    padding: 3%;
+    margin-bottom: 16px;
+}
+
+.img-btn {
+    margin-bottom: 16px;
+}
+.btn-img:hover {
+    color: #D5D9CD;
+}
+.btn-img {
+    background: center center;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    width: 100%
+
+}
+.button-text {
+    text-shadow: 2px 2px 5px black;
+
+}
+
+.post-preview {
+    min-height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-list {
+    padding: 3% 5%;
+}

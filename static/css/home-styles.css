@@ -1,3 +1,11 @@
 .profile-pic{
     width: 20rem;
 }
+.intro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blog-header {
+    padding: 5%;
+}
