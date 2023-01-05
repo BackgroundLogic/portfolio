@@ -15,7 +15,7 @@ from scripts.Functions.func import hash_password, check_password_hash, admin_onl
 
 # setup application
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'sHHSssHHsUPERSecretKeyrIGHThere'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 ckeditor = CKEditor(app)
 mailer = Mailer()
 bootstrap = Bootstrap5(app)
@@ -33,7 +33,7 @@ gravatar = Gravatar(
             )
 
 # Setup Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portfolio.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 # create or update database
