@@ -6,6 +6,7 @@ from flask_login import current_user, LoginManager, login_user, logout_user
 from datetime import date
 from flask_gravatar import Gravatar
 import os
+import psycopg2
 # script imports
 from scripts.mailer.mailer import Mailer, mail
 from scripts.Forms.forms import ContactForm, RegisterForm, LoginForm, CreatePostForm, CommentForm, \
