@@ -266,5 +266,14 @@ def edit_post(post_id):
     return render_template('create-post.html', form=edit_form, logged_in=current_user.is_authenticated)
 
 
+@app.route('/delete-post/<int:post_id>', methods=['GET', 'POST'])
+@admin_only
+def delete_post(post_id):
+    post_to_delete = Post.query.get(post_id)
+    db.session.delete(post_to_delete)
+    db.session.commit()
+    return redirect(url_for('post_management'))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
