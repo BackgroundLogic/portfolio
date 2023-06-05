@@ -46,3 +46,11 @@ class Reset(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     user_reset = relationship("User", back_populates="pw_reset")
     code = db.Column(db.String(250), nullable=False)
+
+
+class Projects(db.Model):
+    __tablename__ = "projects"
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(250), unique=True, nullable=False)
+    description = db.Column(db.String, unique=True, nullable=False)
+    page = db.Column(db.String, unique=True, nullable=False)

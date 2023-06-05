@@ -54,3 +54,17 @@ class UpdatePassword(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     confirm_password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Submit")
+
+
+class MorseForm(FlaskForm):
+    english = StringField("English")
+    morse_code = StringField("Morse Code")
+    submit = SubmitField("Convert")
+    reset = SubmitField("Reset")
+
+
+class AddProject(FlaskForm):
+    title = StringField("Project Name", validators=[DataRequired()])
+    page = StringField("Page Route", validators=[DataRequired()])
+    description = CKEditorField("Project Description", validators=[DataRequired()])
+    submit = SubmitField("Submit Project")

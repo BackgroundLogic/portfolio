@@ -43,6 +43,7 @@
                     <ul class="navbar-nav ms-auto">
                         {{ render_nav_item('home', 'Home', use_li=True) }}
                         {{ render_nav_item('cv', 'Curriculum Vitae', use_li=True) }}
+                        {{ render_nav_item('projects', 'Projects', use_li=True) }}
                         {{ render_nav_item('contact_me', 'Contact Me', use_li=True) }}
                         {% if not logged_in: %}
                             {{ render_nav_item('login', 'Login', use_li=True) }}

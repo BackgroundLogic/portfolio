@@ -10,9 +10,10 @@ import psycopg2
 # script imports
 from scripts.mailer.mailer import Mailer, mail
 from scripts.Forms.forms import ContactForm, RegisterForm, LoginForm, CreatePostForm, CommentForm, \
-    PasswordResetRequest, CodeConfirm, UpdatePassword
-from scripts.SQLSetup.models import db, User, Post, Comment, Reset
+    PasswordResetRequest, CodeConfirm, UpdatePassword, MorseForm, AddProject
+from scripts.SQLSetup.models import db, User, Post, Comment, Reset, Projects
 from scripts.Functions.func import hash_password, check_password_hash, admin_only
+from projects.MorseConvert.convert import morse_to_english, english_to_morse
 
 # setup application
 app = Flask(__name__)
@@ -275,5 +276,56 @@ def delete_post(post_id):
     return redirect(url_for('post_management'))
 
 
+@app.route('/projects', methods=['GET', 'POST'])
+def projects():
+    all_projects = Projects.query.all()
+    return render_template('projects.html', all_projects=all_projects, logged_in=current_user.is_authenticated)
+
+
+@app.route('/add-project', methods=['GET', 'POST'])
+def add_project():
+    add_project_form = AddProject()
+    if add_project_form.validate_on_submit():
+        new_project = Projects(
+            title=add_project_form.title.data,
+            page=add_project_form.page.data,
+            description=add_project_form.description.data,
+        )
+        db.session.add(new_project)
+        db.session.commit()
+        return redirect(url_for('projects'))
+    return render_template('add-project.html', form=add_project_form, logged_in=current_user.is_authenticated)
+
+
+@app.route('/delete-project/<int:project_id>', methods=['GET', 'POST'])
+@admin_only
+def delete_project(project_id):
+    project_to_delete = Projects.query.get(project_id)
+    db.session.delete(project_to_delete)
+    db.session.commit()
+    return redirect(url_for('projects'))
+
+
+@app.route('/projects/morse-code-converter', methods=['GET', 'POST'])
+def convert():
+    morse_form = MorseForm()
+    if morse_form.validate_on_submit():
+        if morse_form.submit.data:
+            eng_fill = morse_to_english(morse_form.morse_code.data)
+            if eng_fill == "":
+                morse_form.english.data = morse_form.english.data
+            else:
+                morse_form.english.data = eng_fill
+            mor_fill = english_to_morse(morse_form.english.data)
+            if mor_fill == "":
+                morse_form.morse_code.data = morse_form.morse_code.data
+            else:
+                morse_form.morse_code.data = mor_fill
+            return render_template('convert.html', form=morse_form)
+        else:
+            return redirect(url_for("convert"))
+    return render_template('convert.html', form=morse_form)
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

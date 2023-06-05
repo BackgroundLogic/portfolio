@@ -1,0 +1,29 @@
+{% extends "blank-template.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+    {% block title %}Add Project{% endblock %}
+    {% block page_styles %}
+    <!-- Page Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add-project-styles.css') }}">
+    {% endblock %}
+
+    {% block content %}
+    <!-- Page Content -->
+    <section id="main">
+      <div class="container-fluid form-page">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name=body) }}
+            {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    {% endblock %}
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    <!-- scripts -->
+
+    {% endblock %}
