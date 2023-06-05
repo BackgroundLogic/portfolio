@@ -1,0 +1,28 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "blank-template.html" %}
+    {% block title %}Morse Code Converter{% endblock %}
+    {% block page_styles %}
+    <!-- Page Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/convert-styles.css') }}">
+    {% endblock %}
+
+    {% block content %}
+    <!-- Page Content -->
+    <section id="main">
+        <div class="container-fluid form-page">
+            <div class="row">
+                <h1>Morse Code Converter</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-10 mx-auto">
+                    {{ render_form(form, novalidate=True, button_map={"submit": "primary", "reset": "danger"}) }}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    {% block scripts %}
+    {{ bootstrap.load_js() }}
+    <!-- scripts -->
+
+    {% endblock %}
