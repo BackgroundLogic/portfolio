@@ -324,7 +324,7 @@ def convert():
             return render_template('convert.html', form=morse_form)
         else:
             return redirect(url_for("convert"))
-    return render_template('convert.html', form=morse_form)
+    return render_template('convert.html', form=morse_form, logged_in=current_user.is_authenticated)
 
 
 if __name__ == "__main__":
