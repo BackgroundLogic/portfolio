@@ -9,12 +9,13 @@ class Mailer:
     def __init__(self):
         self.FROM_EMAIL = os.environ.get("FROM_EMAIL")
         self.EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+        self.ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL")
 
     def contact_me(self, name, message, email):
         msg = Message(
             f'New message from {name}',
             sender=self.FROM_EMAIL,
-            recipients=["jangolson@outlook.com", email]
+            recipients=[self.ADMIN_EMAIL, email]
         )
         msg.html = message
         # html used as ckeditor outputs text entry as html,
