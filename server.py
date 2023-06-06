@@ -18,6 +18,7 @@ from projects.MorseConvert.convert import morse_to_english, english_to_morse
 # setup application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+debug_state = os.environ.get('DEBUG')
 ckeditor = CKEditor(app)
 mailer = Mailer()
 bootstrap = Bootstrap5(app)
@@ -338,4 +339,4 @@ def convert():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=debug_state)
