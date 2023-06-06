@@ -48,6 +48,9 @@
                                                 {{ comment.text|safe }}
                                                 <span class="date sub-text">{{ comment.comment_author.username }}</span>
                                             </div>
+                                            {% if current_user.id == 1: %}
+                                                <a class="btn btn-danger float-right" href="{{ url_for('delete_comment', comment_id=comment.id) }}">Delete Comment</a>
+                                            {% endif %}
                                         </li>
                                     <hr>
                                     {% endfor %}

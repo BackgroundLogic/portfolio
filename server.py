@@ -276,6 +276,16 @@ def delete_post(post_id):
     return redirect(url_for('post_management'))
 
 
+@app.route('/delete-comment/<int:comment_id>', methods=['GET', 'POST'])
+@admin_only
+def delete_comment(comment_id):
+    parent_post = Comment.query.get(comment_id).parent_post
+    comment_to_delete = Comment.query.get(comment_id)
+    db.session.delete(comment_to_delete)
+    db.session.commit()
+    return redirect(url_for('view_post', post_id=parent_post.id))
+
+
 @app.route('/projects', methods=['GET', 'POST'])
 def projects():
     all_projects = Projects.query.all()
