@@ -79,3 +79,8 @@ body{
 .post-list {
     padding: 0 5% 4% 5%;
 }
+
+.svg-social-icon {
+    height: 2.2rem;
+    fill: white;
+}
