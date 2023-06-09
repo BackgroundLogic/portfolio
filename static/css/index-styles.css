@@ -1,6 +1,7 @@
 /* Main */
 .img-fluid{
-    width: 60%
+    width: 20rem;
+    padding: 1% 0 0 0;
 }
 .greeting{
     font-family: 'Montserrat', sans-serif;
